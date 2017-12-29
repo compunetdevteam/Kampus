@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Plugin.MediaManager.Forms.iOS;
 using UIKit;
 
 namespace Kampus.iOS
@@ -22,8 +23,10 @@ namespace Kampus.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            VideoViewRenderer.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            
 
             return base.FinishedLaunching(app, options);
         }

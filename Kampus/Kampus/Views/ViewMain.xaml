@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Kampus.ViewModels;assembly=Kampus"
+             xmlns:views="clr-namespace:Kampus.Views;assembly=Kampus"
+             x:Class="Kampus.Views.ViewMain">
+    <ContentPage.BindingContext>
+        <viewModels:CardViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <!--<Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            --><!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+                <Label Text="Select Language" />
+                <Image Source="kd.png" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0" />
+            </StackLayout>--><!--
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                
+                </Grid.ColumnDefinitions>
+                <BoxView Color="CornflowerBlue"
+                         WidthRequest="160"
+                         HeightRequest="160"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center" />
+                <BoxView Grid.Column="1" Color="BlueViolet"
+                         WidthRequest="160"
+                         HeightRequest="160"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center" />
+               
+              
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                   
+                </Grid.ColumnDefinitions>
+
+                <BoxView Color="CornflowerBlue"
+                         WidthRequest="160"
+                         HeightRequest="160"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center" />
+                <BoxView Grid.Column="1" Color="BlueViolet"
+                         WidthRequest="160"
+                         HeightRequest="160"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center" />
+               
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                  
+                </Grid.ColumnDefinitions>
+
+                <BoxView Color="CornflowerBlue"
+                         WidthRequest="160"
+                         HeightRequest="160"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center" />
+                <BoxView Grid.Column="1" Color="BlueViolet"
+                         WidthRequest="160"
+                         HeightRequest="160"
+                         VerticalOptions="Center" 
+                         HorizontalOptions="Center" />
+               
+            </Grid>
+            
+        </Grid>-->
+        
+       
+        <StackLayout Orientation="Vertical">
+            <Label Text="DashBoard" VerticalOptions="Start" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"/>
+            <ListView x:Name="listView" SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                      RowHeight="150" ItemsSource="{Binding CardDataModels}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <views:CardView />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

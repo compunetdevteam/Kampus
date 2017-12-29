@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Kampus.ViewModels;assembly=Kampus"
+             x:Class="Kampus.Views.Login"
+             Title="Login">
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <!--<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>
+                0,20,0,0
+            </OnPlatform.iOS>
+            <OnPlatform.Android>
+                0,0,0,0
+            </OnPlatform.Android>
+            <OnPlatform.WinPhone>
+                0,0,0,0
+            </OnPlatform.WinPhone>
+        </OnPlatform>
+    </ContentPage.Padding>-->
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+               
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50" />
+                
+            </Grid.RowDefinitions>
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+                <Label Text="Select Language" />
+                <Image Source="kd.png" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0" />
+            </StackLayout>-->
+       
+
+        <Grid  Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Source="ebsu.jpg" HeightRequest="60" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="EmailEntry" Text="" Keyboard="Email" Grid.Row="1" Placeholder="MatricNo/Email" PlaceholderColor="#bababa"  FontSize="16"/>
+            <Entry x:Name="PasswordEntry"  IsPassword="True" Grid.Row="2" Placeholder="Password" PlaceholderColor="#bababa" FontSize="16" />
+                <ActivityIndicator  Grid.Row="3" x:Name="LoginActivityIndicator" IsRunning="{Binding IsBusy}" VerticalOptions="Center"
+                               HorizontalOptions="Center" Color="Blue"/>
+                <Button x:Name="BtnLoginName"  Text="Login" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="4" 
+                    Clicked="BtnLogin"/>
+            <Label Text="Login Trouble ? Get help Signing in" HorizontalOptions="Center" Grid.Row="5" Margin="0,10,0,0" FontSize="12" />
+
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" />
+                <Label Text="OR" HorizontalOptions="Center" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0" />
+                    <Label  BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand"  VerticalOptions="Center" Grid.Column="2" />
+            </Grid>
+            <StackLayout Orientation="Horizontal" Grid.Row="7" HorizontalOptions="Center">
+                <Image Source="kd.png"/>
+                    <Button Text="Sign Up here" BackgroundColor="#3897F0" TextColor="#485992"  
+                        Clicked="BtnSignUp"/>
+                    <!--<Label Text="Sign Up here" TextColor="#485992"></Label>-->
+            </StackLayout>
+        </Grid>
+           <StackLayout Grid.Row="1" BackgroundColor="#ffffff">
+             
+           </StackLayout>
+            
+
+        </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>

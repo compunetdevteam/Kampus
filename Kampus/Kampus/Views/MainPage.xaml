@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Kampus"
+             x:Class="Kampus.Views.MainPage"
+                Title="EBSU">
+
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#e8e8e8e">
+            <StackLayout Orientation="Vertical">
+                <!-- This stacklayout you can use for other data you want to use 
+                 in your menu drawer -->
+                <StackLayout.Children>
+                    <Label Text="{Binding Header}" />
+                    <Image Source="{Binding Image}" Aspect="AspectFit" />
+                    <Label Text="{Binding Footer}" HorizontalTextAlignment="Center"/>
+                </StackLayout.Children>
+
+                <ListView x:Name="navigationDrawerList" RowHeight="55" SeparatorVisibility="Default"
+                          BackgroundColor="#e8e8e8e" ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <!-- Main design for the menu items-->
+                                <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                    <Image Source="{Binding Icon}" WidthRequest="40" HeightRequest="40" 
+                                           VerticalOptions="Start"/>
+                                    <Label Text="{Binding Title}" FontSize="Small" VerticalOptions="End"
+                                           TextColor="Black"></Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

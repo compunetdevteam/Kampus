@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Kampus.ViewModels;assembly=Kampus"
+             x:Class="Kampus.Views.SearchStudent"
+             Title="Sign Up">
+
+    <ContentPage.BindingContext>
+        <viewModels:SignUpViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="50" />-->
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="65" />
+            </Grid.RowDefinitions>
+            
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+                <Label Text="Select Language" />
+                <Image Source="kd.png" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0" />
+            </StackLayout>-->
+            <Grid Margin="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="160" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    
+                </Grid.RowDefinitions>
+                <Image Source="ebsu.jpg" HeightRequest="60" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                <Entry x:Name="SearchEntry" Grid.Row="1" Placeholder="MatricNo/JambRegNo" PlaceholderColor="#bababa"  FontSize="16"/>
+                <Button Text="Verify" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="2" 
+                        Clicked="BtnSearch"/>
+            </Grid>
+
+            <StackLayout Grid.Row="1" BackgroundColor="#ffffff">
+                <Label HeightRequest="1" BackgroundColor="#FFFFFF"></Label>
+                <Button Text="Have an account? Login" VerticalOptions="FillAndExpand" 
+                        BackgroundColor="#3897F0" TextColor="White" HeightRequest="50"
+                        Clicked="Button_OnClicked"
+                       />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
